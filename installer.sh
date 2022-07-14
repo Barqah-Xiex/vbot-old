@@ -7,4 +7,5 @@ sleep 3;
 apt install nodejs -y;
 apt install ffmpeg -y;
 sleep 5;
-echo "udah sekarasng ketik\nnode index"
+echo "udah sekarasng ketik"
+echo "node index"
