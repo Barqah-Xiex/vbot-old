@@ -1,6 +1,6 @@
 apt upgrade -y;
 apt update -y;
-apt install curl -y ffmpeg -y wget -y zip -y unzip -y;
+apt install curl ffmpeg wget zip unzip -y;
 curl -fsSL https://deb.nodesource.com/setup_17.x | sudo -E bash -;
 sleep 3;
 apt update;
