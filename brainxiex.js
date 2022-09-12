@@ -130,13 +130,13 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
 
         m.media = isMedia ? Buffer.from( await brainxiex.downloadMediaMessage(quoted) ).toString('base64') : ""
 
-        //m.global = global
+        
         m.idbot = botinfo.idbot
         m.botinfo = botinfo
 
         m.pp = {gc: ppimg,sender: ppuser,bot: ppku}
 	    
-	// m.chatUpdate = chatUpdate
+	
 
         //if(!m.sender.includes(`628979059392`)) return
 
