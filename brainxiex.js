@@ -30,7 +30,7 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
         const command = body.replace(prefix, '').trim().split(/ +/).shift().toLowerCase()
         const args = body.trim().split(/ +/).slice(1)
         const pushname = m.pushName || "No Name"
-        const botNumber = await brainxiex.decodeJid(brainxiex.user.id)
+        const botNumber = brainxiex.user.id.split(":")[0].split("@")[0] + "@s.whatsapp.net"
         const isCreator = [botNumber, ...global.owner].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
         const itsMe = m.sender == botNumber ? true : false
         const text = q = args.join(" ")
