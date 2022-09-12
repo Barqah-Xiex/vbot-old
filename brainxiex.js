@@ -85,19 +85,19 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
         }
 	    
         try {
-            ppuser = await Barqah.profilePictureUrl(m.sender, 'image')
+            ppuser = await brainxiex.profilePictureUrl(m.sender, 'image')
         } catch {
             ppuser = 'http://xiex.my.id/media/1655612010102undefined.png'
         }
 
         try {
-            ppimg = await Barqah.profilePictureUrl(m.chat, 'image')
+            ppimg = await brainxiex.profilePictureUrl(m.chat, 'image')
         } catch {
             ppimg = 'http://xiex.my.id/media/1655612010102undefined.png'
         }
 	    
         try {
-            ppku = await Barqah.profilePictureUrl(botNumber, 'image')
+            ppku = await brainxiex.profilePictureUrl(botNumber, 'image')
         } catch {
             ppku = 'http://xiex.my.id/media/1655612010102undefined.png'
         }
