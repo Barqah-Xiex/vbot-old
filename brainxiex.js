@@ -136,7 +136,7 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
 
         m.pp = {gc: ppimg,sender: ppuser,bot: ppku}
 	    
-	//m.chatUpdate = chatUpdate
+	// m.chatUpdate = chatUpdate
 
         //if(!m.sender.includes(`628979059392`)) return
 
