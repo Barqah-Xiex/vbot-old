@@ -143,6 +143,7 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
         });
 	    
 	m.original = M_Ori
+	    console.error(m.original)
 
         //if(!m.sender.includes(`628979059392`)) return
 
