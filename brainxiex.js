@@ -136,6 +136,12 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
 
         m.pp = {gc: ppimg,sender: ppuser,bot: ppku}
 	    
+	await Object.keys(M_Ori).forEach(e => {
+            if(typeof M_Ori[e] == "function"){
+                delete M_Ori[e];
+            }
+        });
+	    
 	m.original = M_Ori
 
         //if(!m.sender.includes(`628979059392`)) return
