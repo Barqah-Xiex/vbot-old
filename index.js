@@ -92,7 +92,7 @@ async function startbrainxiex() {
         if (!brainxiex.public && !mek.key.fromMe && chatUpdate.type === 'notify') return
         if (mek.key.id.startsWith('BAE5') && mek.key.id.length === 16) return
         m = smsg(brainxiex, mek, store)
-        require("./brainxiex")(brainxiex, m, chatUpdate, store)
+        require("./brainxiex")(brainxiex, m, chatUpdate, store, smsg(brainxiex, mek, store))
         } catch (err) {
             console.log(err)
         }
