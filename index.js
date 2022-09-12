@@ -101,21 +101,21 @@ async function startbrainxiex() {
 brainxiex.ev.on('group-participants.update', async (anu) => {
         console.log(anu)
         try {
-            let metadata = await client.groupMetadata(anu.id)
+            let metadata = await brainxiex.groupMetadata(anu.id)
             let participants = anu.participants
             for (let num of participants) {
                 try {
-                    ppuser = await client.profilePictureUrl(num, 'image')
+                    ppuser = await brainxiex.profilePictureUrl(num, 'image')
                 } catch {
                     ppuser = 'http://xiex.my.id/media/1655612010102undefined.png'
                 }
 
                 try {
-                    ppgroup = await client.profilePictureUrl(anu.id, 'image')
+                    ppgroup = await brainxiex.profilePictureUrl(anu.id, 'image')
                 } catch {
                     ppgroup = 'http://xiex.my.id/media/1655612010102undefined.png'
                 }
-                const nama = await client.getName(num)
+                const nama = await brainxiex.getName(num)
                 let groupMembers = await metadata.participants
                 let Ttes = `${num.split("@")[0]} Telah Meninggalkan Grup *${metadata.subject}*`
                 let Tod = `Selamat Datang DI GRUP *${metadata.subject}*\n\nUsername : ${num.split("@")[0]}`
