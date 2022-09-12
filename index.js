@@ -98,7 +98,39 @@ async function startbrainxiex() {
         }
     })
     
+brainxiex.ev.on('group-participants.update', async (anu) => {
+        console.log(anu)
+        try {
+            let metadata = await client.groupMetadata(anu.id)
+            let participants = anu.participants
+            for (let num of participants) {
+                try {
+                    ppuser = await client.profilePictureUrl(num, 'image')
+                } catch {
+                    ppuser = 'http://xiex.my.id/media/1655612010102undefined.png'
+                }
 
+                try {
+                    ppgroup = await client.profilePictureUrl(anu.id, 'image')
+                } catch {
+                    ppgroup = 'http://xiex.my.id/media/1655612010102undefined.png'
+                }
+                const nama = await client.getName(num)
+                let groupMembers = await metadata.participants
+                let Ttes = `${num.split("@")[0]} Telah Meninggalkan Grup *${metadata.subject}*`
+                let Tod = `Selamat Datang DI GRUP *${metadata.subject}*\n\nUsername : ${num.split("@")[0]}`
+                if (anu.action == 'add') {
+                    let media = { image: { url: `http://xiex.my.id:3000/api/welcome?ucapan=Selamat%20Datang&nama=${encodeURIComponent(nama)}&nomor=@${num.split("@")[0]}&grup=${encodeURIComponent(metadata.subject)}&membergrup=${groupMembers.length}&ppimg=${encodeURIComponent(ppuser)}` } }
+                    brainxiex.sendMessage(anu.id,media)
+                } else if (anu.action == 'remove') {
+                    let media = { image: { url: `http://xiex.my.id:3000/api/welcome?ucapan=Selamat%20Tinggal&nama=${encodeURIComponent(nama)}&nomor=${num.split("@")[0]}&grup=${encodeURIComponent(metadata.subject)}&membergrup=${groupMembers.length}&ppimg=${encodeURIComponent(ppuser)}` } }
+                    brainxiex.sendMessage(anu.id,media)
+                }
+            }
+        } catch (err) {
+            console.log(err)
+        }
+    })
 
 	
     // Setting
