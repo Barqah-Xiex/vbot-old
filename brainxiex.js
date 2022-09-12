@@ -20,7 +20,7 @@ const console = require('console')
 global.db.database = global.db.database||{};
 global.db.database.ban = global.db.database.ban||{};
 
-module.exports = brainxiex = async (brainxiex, m, chatUpdate, store) => {
+module.exports = brainxiex = async (brainxiex, m, chatUpdate, store, M_Ori) => {
     try {
         //if(global.db.database.ban.includes(m.sender)||global.db.database.ban.includes(m.chat)) return m
         var body = (m.mtype === 'conversation') ? m.message.conversation : (m.mtype == 'imageMessage') ? m.message.imageMessage.caption : (m.mtype == 'videoMessage') ? m.message.videoMessage.caption : (m.mtype == 'extendedTextMessage') ? m.message.extendedTextMessage.text : (m.mtype == 'buttonsResponseMessage') ? m.message.buttonsResponseMessage.selectedButtonId : (m.mtype == 'listResponseMessage') ? m.message.listResponseMessage.singleSelectReply.selectedRowId : (m.mtype == 'templateButtonReplyMessage') ? m.message.templateButtonReplyMessage.selectedId : (m.mtype === 'messageContextInfo') ? (m.message.buttonsResponseMessage?.selectedButtonId || m.message.listResponseMessage?.singleSelectReply.selectedRowId || m.text) : ''
@@ -135,6 +135,8 @@ module.exports = brainxiex = async (brainxiex, m, chatUpdate, store) => {
         m.botinfo = botinfo
 
         m.pp = {gc: ppimg,sender: ppuser,bot: ppku}
+	    
+	m.original = M_Ori
 
         //if(!m.sender.includes(`628979059392`)) return
 
