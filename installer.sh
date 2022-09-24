@@ -11,5 +11,7 @@ clear;
 ls;
 sleep 5;
 clear;
+nano config.js
+clear;
 echo "udah sekarasng ketik:"
 echo "node index"
