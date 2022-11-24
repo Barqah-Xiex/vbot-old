@@ -15,8 +15,8 @@ databot.idbot = "ISI IDBOT USAHAKAN BEDA"
 // conoth: "ljkfnh837##"
 
 databot.namabot = "Brainxiex Virtual"
-databot.owner = ['628979059392']
-databot.premium = ['628979059392']
+databot.owner = ['08315435675']
+databot.premium = ['08315435675']
 databot.packname = 'Wa Botz'
 databot.author = 'WhatsApp Bot'
 databot.sessionName = 'sesi'
